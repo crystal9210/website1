@@ -71,3 +71,60 @@ console.log('Server running at http://127.0.0.1:3002');
 // MIMEタイプは通常、拡張子と関連付けられます。拡張子はファイルの種類を示すために使用され、それに応じて適切なMIMEタイプが関連付けられます。
 // 例えば、.html 拡張子はHTML文書を示し、関連付けられたMIMEタイプは 'text/html' です。
 // 同様に、.jpg 拡張子はJPEG画像を示し、関連付けられたMIMEタイプは 'image/jpeg' です。
+
+
+//以下はhttps化＋セキュリティ対策をしたソース
+// var https = require('https');
+// var fs = require('fs');
+// var path = require('path');
+
+
+////Node.jsでhttpsサーバを作成するために使用されるss証明書のあぷしょんを定義している
+////ssl(secure sockets layer)：セキュアな通信を確立するためのプロトコル
+////hhts(http over ssl)、ssl証明書はサーバとクライアント間の通信を暗号化し、信頼性とセキュリティを提供する
+// var options = {  //httpsサーバを作成時に必要なssl証明書の情報を提供する→サーバ暗号化されたセキュアな通信を確立し、クライアントとの間で安全なデータのやり取りが可能
+//   key: fs.readFileSync('ssl/privateKey.pem'),  // SSL証明書の秘密鍵を同期的に読み込む；実際にあ非同期な読み込みが推奨される→アプリケーションの応答性とスケーラビリティの向上
+//   cert: fs.readFileSync('ssl/certificate.pem') // SSL証明書の公開鍵
+// };
+
+// https.createServer(options, function(request, response) {
+//   console.log('request', request.url);   //リクエストのURLをコンソールに出力する、request.url：クライアントからのリクエストに含まれるURLパスやクエリパラメータなどの情報
+////開発者はリクエストの処理やデバッグ時にコンソールの出力を確認sるうことで、正しいリクエストが送信されているか、または問題が発生しているかを把握することができ、それにより必要な処理やデバッグを行うことができる
+
+//   var filePath = '.' + request.url;
+//   if (filePath == './') {
+//     filePath = './test.html';
+//   }
+
+//   var extname = String(path.extname(filePath)).toLowerCase();
+//   var mimeTypes = {
+//     '.html': 'text/html',
+//     '.js': 'text/javascript',
+//     '.css': 'text/css'
+//   };
+
+//   var contentType = mimeTypes[extname] || 'application/octet-stream';
+
+//   fs.readFile(filePath, function(error, content) {
+//     if (error) {
+//       if (error.code == 'ENOENT') {
+//         fs.readFile('./404.html', function() {
+//           response.writeHead(404, {'Content-Type': 'text/html'});
+//           response.end(content, 'utf-8');
+//         });
+//       } else {
+//         response.writeHead(500);
+//         response.end('Sorry, check with the site admin for error: ' + error.code + '..\n');
+//       }
+//     } else {
+//       response.writeHead(200, {'Content-Type': contentType});
+//       response.end(content, 'utf-8');
+//     }
+//   });
+// }).listen(3002);
+
+// console.log('Server running at https://127.0.0.1:3002');
+
+
+////追記：スケーラビリティ＝システムやソフトウェアが負荷や需要の増加に対して柔軟に対応できる能力を指します。
+////システムのスケーラビリティが高いということは、追加のリソースやユーザー数の増加などの変化に対して効率的に対応できるということを意味

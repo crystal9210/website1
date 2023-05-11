@@ -1,0 +1,27 @@
+section img{
+    width: 200px;
+    height:auto;
+    border-radius: 30%;
+}
+
+/* .cropped-image {
+    width: 300px; /* 切り出し領域の幅 */
+    /* height: 200px; 切り出し領域の高さ */
+    /* object-fit: cover; 切り出し領域に合わせて調整 */
+  /* }*/
+
+.square-container {
+    width: 200px; /* 正方形の一辺のサイズを設定 */
+    height: 200px; /* 正方形の一辺のサイズを設定 */
+    overflow: hidden; /* 内容がはみ出した場合は切り捨てる */
+    background-image: url("../img/MyPhoto2.jpg");    /*背景画像のパス*/
+    background-size:cover;  /*背景画像に合わせて調整*/
+    background-position: center 50%;
+  }
+  
+  main{
+    border-width: 1px;
+    border-color: gray;
+    border-style: solid;
+    border-radius: 8px;
+  }

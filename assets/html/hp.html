@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sekiyuu's Website</title>
+    <style>
+        html { color-scheme: light dark; }
+        body { width: 35em; margin: 0 auto;
+        font-family: Tahoma, Verdana, Arial, sans-serif; }
+    </style>
+    <link rel="stylesheet" href="../css/hp.css">
+</head>
+<body>
+    <header>
+    <h1>Welcome to my Website</h1>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <section>
+        <h2>About me</h2>
+        <ul>
+            <li>Name:Yuto Seki</li>
+        </ul>
+        <!-- <div class="square-container"> -->
+            <img src="../img/MyPhoto2.jpg" class="cropped-image" alt="私自身の写真です。表示されない場合、通信環境を見直してください。">
+        <!-- </div>   -->
+        <p>I'm studying programming,English</p>
+    </section>
+    <section>
+        <h2>Contact me</h2>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Message:</label>
+            <textarea name="message" id="message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+</main>
+    <footer>
+        <p>©2023 Yuto Seki.All rights reserved.</p>
+    </footer>
+</body>
+</html>

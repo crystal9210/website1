@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>テストページ</title>
+    <title>sekiyuu's Website</title>
     <style>
         html { color-scheme: light dark; }
         body { width: 35em; margin: 0 auto;
@@ -12,7 +12,37 @@
     </style>
 </head>
 <body>
-    <h1>テストページ</h1>
-    <p>ただのテストページ</p>
+    <header>
+    <h1>Welcome to my Website</h1>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <section>
+        <h2>About me</h2>
+        <img src="" alt="">
+        <p>I'm studying programming,English</p>
+    </section>
+    <section>
+        <h2>Contact me</h2>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Message:</label>
+            <textarea name="message" id="message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+</main>
+    <footer>
+        <p>Copyright @ 2023 my Website</p>
+    </footer>
 </body>
 </html>
